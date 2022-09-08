@@ -1,0 +1,97 @@
+@value cTitle, cBody from '../../common/font.css';
+@value cBlack, clGrey, cRed from '../../common/color.css';
+
+.wrap {
+  font-family: cTitle;
+  color: cBlack;
+  text-align: center;
+  border: 2px solid ;
+  width: 30em;
+  padding: 3em 4em;
+  border-radius: 0.3em;
+}
+
+.title {
+  font-size: 4em;
+  margin-bottom: 0.5em;
+}
+
+/* email_login form */
+.email_login div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1em;
+}
+
+.email_login label {
+  font-size: 2em;
+}
+.email_login input {
+  border: none;
+  border-bottom: 2px solid cBlack;
+  background: transparent;
+  text-align: center;
+  font-size: 1.2em;
+  font-family: cBody;
+  padding: 0.9em 0 0.3em;
+  transition: border 150ms ease-in-out;
+}
+
+.email_login input:focus {
+  outline: none;
+  border-bottom: 3px solid cRed;
+}
+
+.email_login button {
+  background-color: cBlack;
+  border: none;
+  color: clGrey;
+  padding: 1em 2em;
+  font-size: 1em;
+  font-family: cTitle;
+  letter-spacing: 3px;
+  border-radius: 0.2em;
+  border: 2px solid cBlack;
+  margin: 2em;
+  transition: background 150ms ease-in-out;
+}
+
+/* social_ligin */
+.social_login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.social_login p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  letter-spacing: 1px;
+}
+.social_login div {
+  display: flex;
+}
+.social_login button {
+  font-size: 1.1em;
+  font-family: cTitle;
+  letter-spacing: 3px;
+  border-radius: 0.2em;
+  width: 100%;
+  background: clGrey;
+  line-height: 2em;
+  border: 2px solid cBlack;
+  transition: all 150ms ease-in-out;
+}
+
+.social_login button span {
+  margin-left: 0.5em;
+}
+
+.social_login button:first-child {
+  margin-right: 0.2em;
+}
+
+button:hover {
+  background: cRed;
+  color: clGrey;
+}

@@ -8,3 +8,11 @@ ul, li {
   list-style: none;
   color: inherit;
 }
+
+body {
+  background: #f6f2f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
