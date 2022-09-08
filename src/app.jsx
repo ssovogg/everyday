@@ -1,9 +1,9 @@
 import './app.css';
 import Login from './pages/Login/Login';
 
-function App() {
+function App({ auth }) {
   return (
-    <Login />
+    <Login auth={auth} />
   );
 }
 

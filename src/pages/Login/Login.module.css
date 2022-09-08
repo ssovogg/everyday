@@ -1,5 +1,5 @@
 @value cTitle, cBody from '../../common/font.css';
-@value cBlack, clGrey, cRed from '../../common/color.css';
+@value cBlack, clGrey, cRed, clRed from '../../common/color.css';
 
 .wrap {
   font-family: cTitle;
@@ -17,11 +17,15 @@
 }
 
 /* email_login form */
+.email_login {
+  display: flex;
+  flex-direction: column;
+}
 .email_login div {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .email_login label {
@@ -35,12 +39,25 @@
   font-size: 1.2em;
   font-family: cBody;
   padding: 0.9em 0 0.3em;
-  transition: border 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
 }
 
 .email_login input:focus {
   outline: none;
   border-bottom: 3px solid cRed;
+}
+
+.email_login .input_invalid {
+  background-color: clRed
+}
+
+.email_login span {
+  text-align: right;
+  font-family: cBody;
+  font-size: 0.9em;
+  margin-top: 0.2em;
+  font-weight: bold;
+  color: cRed;
 }
 
 .email_login button {

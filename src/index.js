@@ -1,13 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './app';
-import '@fortawesome/fontawesome-free/js/all.js';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./app";
+import "@fortawesome/fontawesome-free/js/all.js";
+import AuthService from "./service/AuthService";
+import { firebaseApp } from "./service/firebase";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const auth = new AuthService(firebaseApp);
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <App auth={auth} />
   </React.StrictMode>
 );
-
