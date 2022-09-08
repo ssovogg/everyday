@@ -128,3 +128,8 @@ button:hover {
   background: cRed;
   color: clGrey;
 }
+
+.copy {
+  text-align: center;
+  margin-top: 0.5em;
+}

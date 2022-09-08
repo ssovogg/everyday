@@ -30,6 +30,7 @@ const Login = ({ auth }) => {
   const emailClasses = emailIsValid || !emailIsTouched ? null : `${classes.input_invalid}`;
 
   return (
+    <>
     <div className={classes.wrap}>
       <h1 className={classes.title}>
         ~ Everyday ~ <br /> Login
@@ -67,6 +68,10 @@ const Login = ({ auth }) => {
         </div>
       </div>
     </div>
+    <p className={classes.copy}>
+      &copy; coding everyday!
+    </p>
+    </>
   );
 };
 
