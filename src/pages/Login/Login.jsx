@@ -17,6 +17,7 @@ const Login = (props) => (
       </div>
       <button type="submit">로그인</button>
     </form>
+    <button className={classes.signin}>계정 만들기</button>
     <div className={classes.social_login}>
       <p>다른 방법으로 로그인하기</p>
       <div>
