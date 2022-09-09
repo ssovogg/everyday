@@ -1,0 +1,8 @@
+@value cTitle, cBody from '../../common/font.css';
+@value cBlack, clGrey, cRed, clRed from '../../common/color.css';
+
+.wrap {
+  width: 95vw;
+  height: 95vh;
+  border: 2px solid cBlack;
+}
