@@ -1,11 +1,70 @@
 @value cTitle, cBody from '../../common/font.css';
-@value cBlack, clGrey, cRed, clRed from '../../common/color.css';
+@value cBlack, clGrey, cRed, clRed, cWhite from '../../common/color.css';
 
-.time_table {
+.wrap {
   width: 40%;
+  padding: 0 1em;
 }
 
 .title {
   font-size: 1.8em;
   margin: 0.5em 0;
+}
+
+.time_table {
+  background: cWhite;
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 0.8em;
+  border: 2px solid cBlack;
+}
+
+.time_table h3 {
+  font-size: 1.5em;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid cBlack;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  font-family: cBody;
+}
+
+.list input {
+  margin-right: 0.5em;
+}
+.list p {
+  flex: 1;
+  text-align: start;
+  font-weight: bold;
+}
+.list span {}
+
+.total {
+  border-top: 2px solid cBlack;
+  padding-top: 0.5em;
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3em;
+}
+.total p {}
+.total span {}
+
+.wrap em {
+  font-style: normal;
+  font-family: cBody;
+  font-size: 0.8em;
+}
+
+.theme {}
+.theme button {
+  width: 3.5em;
+  margin-right: 0.5em;
+}
+.theme button:last-child {
+  margin-right: 0;
 }
