@@ -1,0 +1,11 @@
+@value cTitle, cBody from '../../common/font.css';
+@value cBlack, clGrey, cRed, clRed from '../../common/color.css';
+
+.time_table {
+  width: 40%;
+}
+
+.title {
+  font-size: 1.8em;
+  margin: 0.5em 0;
+}

@@ -5,4 +5,11 @@
   width: 95vw;
   height: 95vh;
   border: 2px solid cBlack;
+  font-family: cTitle;
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  text-align: center;
 }

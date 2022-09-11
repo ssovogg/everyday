@@ -1,0 +1,58 @@
+@value cTitle, cBody from '../../common/font.css';
+@value cBlack, cWhite, clGrey, cGrey, cRed, clRed, cYellow from '../../common/color.css';
+
+.topic {
+  display: flex;
+}
+.topic li {
+  padding: 0.3em 0.8em;
+  /* border: 1px solid cBlack; */
+  border-radius: 0.8em 0.8em 0 0;
+  background: cGrey;
+  margin-right: 0.3em;
+}
+.topic li:hover {
+  background: cYellow;
+
+}
+
+.topic .topic_active {
+  background: cYellow;
+}
+
+.list {
+  background: cYellow;
+  padding: 1em;
+}
+
+.list li {
+  font-family: cBody;
+  letter-spacing: 1px;
+  border: 1.5px solid cBlack;
+  background: cWhite;
+  display: flex;
+  text-align: start;
+  padding: 0 0.5em;
+  margin: 0.5em 0;
+}
+
+.list p {
+  flex: 1;
+  font-weight: bold;
+  padding: 0.5em 0;
+}
+.list span {
+  padding: 0 0.5em;
+  padding: 0.5em 0;
+}
+.list button {
+  all: unset;
+  font-size: 0.5em;
+  margin-left: 1em;
+  border-left: 1px solid cBlack;
+  padding-left: 1em;
+}
+.list button:hover {
+  color: cRed;
+  font-weight: bold;
+}
