@@ -10,7 +10,9 @@ const Header = ({ auth }) => {
 
   return (
     <header className={classes.header}>
-      <h1 className={classes.title}>Everday Routine</h1>
+      <h1 className={classes.title}>
+        Everday Routine
+      </h1>
       <ul className={classes.nav}>
         <li onMouseEnter={toggleProfileBtn} onMouseLeave={toggleProfileBtn}>
           {!toggleProfle ? (

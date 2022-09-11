@@ -10,6 +10,8 @@
   border-radius: 0.8em 0.8em 0 0;
   background: cGrey;
   margin-right: 0.3em;
+  border: 1.5px solid cBlack;
+  border-bottom: none;
 }
 .topic li:hover {
   background: cYellow;
@@ -17,12 +19,26 @@
 }
 
 .topic .topic_active {
+  position: relative;
   background: cYellow;
+  border: 1.5px solid cBlack;
+  border-bottom: none;
+}
+
+.topic .topic_active::after {
+  content: '';
+  width: 100%;
+  height: 4px;
+  background: cYellow;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
 }
 
 .list {
   background: cYellow;
   padding: 1em;
+  border: 1.5px solid cBlack;
 }
 
 .list li {

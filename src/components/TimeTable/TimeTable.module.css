@@ -3,11 +3,11 @@
 
 .wrap {
   width: 40%;
-  padding: 0 1em;
+  padding: 1em 2em 0;
 }
 
 .title {
-  font-size: 1.8em;
+  font-size: 2em;
   margin: 0.5em 0;
 }
 
@@ -16,7 +16,7 @@
   width: 100%;
   padding: 1em;
   margin-bottom: 0.8em;
-  border: 2px solid cBlack;
+  border: 1.5px solid cBlack;
 }
 
 .time_table h3 {

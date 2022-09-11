@@ -3,12 +3,12 @@
 
 .wrap {
   width: 60%;
-  padding: 0 0.8em;
+  padding: 1em 2em 0;
   border-right: 2px solid cBlack;
 }
 
 .title {
-  font-size: 1.8em;
+  font-size: 2em;
   margin: 0.5em 0;
 }
 
