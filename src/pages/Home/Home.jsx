@@ -6,32 +6,27 @@ import TimeTable from "../../components/TimeTable/TimeTable";
 import Header from "../../Layout/Header/Header";
 import Footer from '../../Layout/Footer/Footer'
 import classes from "./Home.module.css";
+import { collection, doc, onSnapshot } from "firebase/firestore";
 
-const Home = ({ auth }) => {
+const Home = ({ auth, db }) => {
+  const [topic, setTopic] = useState('여가');
   const [routines, setRoutines] = useState([]);
-  const fatchRoutines = async () => {
-    const response = await fetch('https://everyday-549d9-default-rtdb.firebaseio.com/routine.json');
-    const data = await response.json();
-    const loadedRoutines = [];
-    for (const key in data){
-      loadedRoutines.push({
-        id: key,
-        topic: data[key].topic,
-        routines: data[key].routines,
-      })
-    }
-    setRoutines(loadedRoutines);
-    console.log(loadedRoutines);
-  }
-
+  const selectTopic = (topic) => setTopic(topic);
   useEffect(()=>{
-    fatchRoutines()
-  },[])
+    onSnapshot(collection(db, topic), (snapshot) => {
+      const realTimeRoutines = snapshot.docs.map((doc) => ({
+        id:doc.id, ...doc.data()
+      }))
+      setRoutines(realTimeRoutines);
+      console.log(realTimeRoutines);
+    })
+  },[topic])
+
   return (
     <div className={classes.wrap}>
       <Header auth={auth} />
       <div className={classes.content}>
-        <Routine routineObj={routines} />
+        <Routine routines={routines} db={db} selectTopic={selectTopic} />
         <TimeTable />
       </div>
       <Footer />

@@ -4,10 +4,10 @@ import classes from "./RoutineList.module.css";
 const RoutineList = ({ routines }) => {
   return (
       <ul className={classes.list}>
-        {Object.keys(routines).map(key => (
-          <li>
-            <p>{routines[key].todo}</p>
-            <span>{routines[key].time}분</span>
+        {routines.map(routine => (
+          <li key={routine.id}>
+            <p>{routine.todo}</p>
+            <span>{routine.time}분</span>
             <button>X</button>
             <button>edit</button>
             <button>

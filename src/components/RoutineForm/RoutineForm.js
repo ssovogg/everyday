@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import classes from "./RoutineForm.module.css";
-const RoutineForm = ({ routineObj, addRoutine }) => {
+import { addDoc, collection } from "firebase/firestore";
+
+const RoutineForm = ({db, routines, TOPICS }) => {
+  const formRef = useRef();
   const [todo, setTodo] = useState("");
   const [hour, setHour] = useState("");
   const [minutes, setMinutes] = useState("");
@@ -25,23 +28,22 @@ const RoutineForm = ({ routineObj, addRoutine }) => {
     }
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    addRoutine({
+    await addDoc(collection(db, topic), {
       topic: topic,
-      routines: {
-        time: hour * 60 + minutes,
-        todo: todo,
-      },
+      todo: todo,
+      time: Number(hour) * 60 + Number(minutes),
     });
+    formRef.current.reset();
   };
 
   return (
-    <form onSubmit={onSubmit} className={classes.routine_form}>
+    <form ref={formRef} onSubmit={onSubmit} className={classes.routine_form}>
       <ul className={classes.topic}>
-        {Object.keys(routineObj).map((key) => (
-          <li key={key} onClick={onClick}>
-            <button>{routineObj[key].topic}</button>
+        {TOPICS.map((topic) => (
+          <li key={topic.tab} onClick={onClick}>
+            <button>{topic.tab}</button>
           </li>
         ))}
         <li>
