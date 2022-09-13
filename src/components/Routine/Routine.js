@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import RoutineForm from "../RoutineForm/RoutineForm";
 import RoutineList from "../RoutineList/RoutineList";
 import RoutineTab from "../RoutineTab/RoutineTab";
 import classes from "./Routine.module.css";
 
+// 현재 선택한 탭과 이름이 같으면 클래스 추가
 const TOPICS = [{ tab: "여가" }, { tab: "공부" }, { tab: "운동" }];
 
 const Routine = ({ db, routines, selectTopic }) => {
@@ -13,7 +14,11 @@ const Routine = ({ db, routines, selectTopic }) => {
   const onSelectTab = (topic) => {
     selectTopic(topic);
     setSelectedTab(topic);
-    setTabActive(true);
+    if (selectedTab === topic){
+      setTabActive(true);
+    } else {
+      setTabActive(false);
+    }
   };
 
   return (

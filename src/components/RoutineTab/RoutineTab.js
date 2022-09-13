@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './RoutineTab.module.css';
 
 const RoutineTab = ({ topic, onSelectTab, onActive }) => {
   const onClick = (e) => {
-    onSelectTab(e.target.innerText);
+    onSelectTab(e.target.id);
   }
-  const activeClasses = onActive ? `${classes.tab_active}` : `${classes.tab}`;
   return (
-    <li onClick={onClick} className={activeClasses}>
-      {topic}
+    <li className={classes.tab}>
+      <input type="radio" id={topic} onClick={onClick} name="tab"/>
+      <label htmlFor={topic}>{topic}</label>
     </li>
   )};
 

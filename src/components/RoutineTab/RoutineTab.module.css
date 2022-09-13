@@ -2,17 +2,31 @@
 @value cBlack, cWhite, clGrey, cGrey, cRed, clRed, cYellow from '../../common/color.css';
 
 .tab {
-  background: cGrey;
+  padding: 0.3em 0;
+}
+.tab input[type=radio]{
+  display: none;
 }
 
-.tab_active {
-  position: relative;
-  background: cYellow;
+.tab input[type=radio]+label{
+  background: cGrey;
+  padding: 0.3em 0.8em;
+  border-radius: 0.8em 0.8em 0 0;
+  margin-right: 0.3em;
   border: 1.5px solid cBlack;
   border-bottom: none;
 }
 
-.tab_active::after {
+.tab input[type=radio]+label:hover {
+  background: cYellow;
+}
+
+.tab input[type=radio]:checked+label {
+  position: relative;
+  background: cYellow;
+}
+
+.tab input[type=radio]:checked+label::after {
   content: '';
   width: 100%;
   height: 4px;

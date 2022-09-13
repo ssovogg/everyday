@@ -13,23 +13,8 @@
   margin: 0.5em 0;
 }
 
-
-
-
 .tabs {
   display: flex;
-}
-.tabs li {
-  padding: 0.3em 0.8em;
-  /* border: 1px solid cBlack; */
-  border-radius: 0.8em 0.8em 0 0;
-  margin-right: 0.3em;
-  border: 1.5px solid cBlack;
-  border-bottom: none;
-}
-.tabs li:hover {
-  background: cYellow;
-
 }
 
 @media screen and (max-width: cMiddle) {
