@@ -1,7 +1,7 @@
 @value cTitle, cBody from '../../common/font.css';
 @value cBlack, clGrey, cRed, clRed from '../../common/color.css';
-
 .wrap {
+  margin: 3em auto;
   font-family: cTitle;
   color: cBlack;
   text-align: center;

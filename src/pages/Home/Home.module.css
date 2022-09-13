@@ -3,20 +3,25 @@
 @value cMiddle from '../../common/size.css';
 
 .wrap {
-  width: 95vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 2px solid cBlack;
   font-family: cTitle;
+  margin: 1em;
+  margin-bottom: 0;
 }
 
 .content {
   display: flex;
   height: 100%;
+  width: 100%;
   text-align: center;
 }
 
 @media screen and (max-width: cMiddle) {
-  .wrap {
-    margin-top: 6em;
+  .wrap{
+    margin-top: 0.6em;
   }
   .content {
     flex-direction: column;

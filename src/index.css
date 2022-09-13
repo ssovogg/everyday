@@ -11,8 +11,10 @@ ul, li {
 
 body {
   background: #f6f2f1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+}
+
+@media screen and (max-width: 50rem) {
+  body {
+    align-items: flex-start
+  }
 }

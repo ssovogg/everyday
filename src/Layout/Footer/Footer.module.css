@@ -1,0 +1,13 @@
+@value cTitle, cBody from '../../common/font.css';
+@value cBlack, cWhite, clGrey, cRed, clRed from '../../common/color.css';
+@value cMiddle from '../../common/size.css';
+
+.footer {
+  font-family: cBody;
+  font-size: 0.8em;
+  text-align: center;
+  color: cWhite;
+  background: cBlack;
+  padding: 3em;
+  width: 100%;
+}

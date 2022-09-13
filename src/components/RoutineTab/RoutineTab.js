@@ -5,8 +5,9 @@ const RoutineTab = ({ topic, onSelectTab, onActive }) => {
   const onClick = (e) => {
     onSelectTab(e.target.innerText);
   }
+  const activeClasses = onActive ? `${classes.tab_active}` : `${classes.tab}`;
   return (
-    <li onClick={onClick} className={`onActive ? ${classes.tab_active} : ${classes.tab}`}>
+    <li onClick={onClick} className={activeClasses}>
       {topic}
     </li>
   )};

@@ -13,83 +13,8 @@
   margin: 0.5em 0;
 }
 
-.routine_form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  padding: 1em 0 2em;
-}
 
-.topic {
-  margin-bottom: 1em;
-  display: flex;
-}
 
-.topic li {
-  margin-right: 0.5em;
-}
-
-.topic li:last-child {
-  margin-right: 0;
-}
-
-.topic button {
-  width: 2.8em;
-  height: 2.8em;
-  border: 1px solid cBlack;
-  font-family: cBody;
-  font-weight: bold;
-  font-size: 0.8em;
-  transition: all 150ms ease-in;
-  background: cYellow;
-}
-.topic button:hover {
-  background: cRed;
-}
-
-.topic_active {
-  background: cRed;
-  color: clGrey;
-}
-
-.input {
-  display: flex;
-  width: 100%;
-}
-.todo,
-.time {
-  font-family: cBody;
-  font-size: 1em;
-  padding: 0.5em;
-  background: cWhite;
-  border: none;
-  border-bottom: 2px solid cBlack;
-  border-top: 2px solid cBlack;
-}
-.todo {
-  width: 90%;
-  border-left: 2px solid cBlack;
-  border-right: 2px solid cBlack;
-}
-.time {
-  width: 4em;
-}
-
-.todo:focus,
-.time:focus {
-  outline: none;
-  background-color: cYellow;
-}
-
-.add_btn {
-  all: unset;
-  padding: 0.5em;
-  background: cBlack;
-  color: clGrey;
-  border: 2px solid cBlack;
-}
 
 .tabs {
   display: flex;

@@ -1,39 +1,7 @@
 @value cTitle, cBody from '../../common/font.css';
 @value cBlack, cWhite, clGrey, cGrey, cRed, clRed, cYellow from '../../common/color.css';
 
-.topic {
-  display: flex;
-}
-.topic li {
-  padding: 0.3em 0.8em;
-  /* border: 1px solid cBlack; */
-  border-radius: 0.8em 0.8em 0 0;
-  background: cGrey;
-  margin-right: 0.3em;
-  border: 1.5px solid cBlack;
-  border-bottom: none;
-}
-.topic li:hover {
-  background: cYellow;
 
-}
-
-.topic .topic_active {
-  position: relative;
-  background: cYellow;
-  border: 1.5px solid cBlack;
-  border-bottom: none;
-}
-
-.topic .topic_active::after {
-  content: '';
-  width: 100%;
-  height: 4px;
-  background: cYellow;
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-}
 
 .list {
   background: cYellow;

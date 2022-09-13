@@ -2,6 +2,7 @@
 @value cBlack, clGrey, cRed, clRed from '../../common/color.css';
 
 .header {
+  width: 100%;
   border-bottom: 2px solid cBlack;
   display: flex;
   justify-content: space-between;

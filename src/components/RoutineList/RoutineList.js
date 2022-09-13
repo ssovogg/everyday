@@ -8,6 +8,7 @@ const RoutineList = ({ routines }) => {
           <li>
             <p>{routines[key].todo}</p>
             <span>{routines[key].time}분</span>
+            <button>X</button>
             <button>edit</button>
             <button>
               add <i class="fa-solid fa-arrow-right"></i>

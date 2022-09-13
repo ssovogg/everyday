@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Routine from "../../components/Routine/Routine";
 import TimeTable from "../../components/TimeTable/TimeTable";
 import Header from "../../Layout/Header/Header";
+import Footer from '../../Layout/Footer/Footer'
 import classes from "./Home.module.css";
 
 const Home = ({ auth }) => {
@@ -11,7 +12,6 @@ const Home = ({ auth }) => {
   const fatchRoutines = async () => {
     const response = await fetch('https://everyday-549d9-default-rtdb.firebaseio.com/routine.json');
     const data = await response.json();
-    // const transformMovies = data.results.map(())
     const loadedRoutines = [];
     for (const key in data){
       loadedRoutines.push({
@@ -34,6 +34,7 @@ const Home = ({ auth }) => {
         <Routine routineObj={routines} />
         <TimeTable />
       </div>
+      <Footer />
     </div>
   );
 };
