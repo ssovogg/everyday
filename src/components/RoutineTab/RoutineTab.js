@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import classes from './RoutineTab.module.css';
 
-const RoutineTab = ({ topic, onSelectTab, onActive }) => {
+const RoutineTab = ({ topic, onSelectTab }) => {
   const onClick = (e) => {
     onSelectTab(e.target.id);
+    console.log(e.target.id);
   }
   return (
     <li className={classes.tab}>

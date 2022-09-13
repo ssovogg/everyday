@@ -9,10 +9,10 @@ const RoutineForm = ({db, routines, TOPICS }) => {
   const [minutes, setMinutes] = useState("");
   const [topic, setTopic] = useState("공부");
   const onClick = (e) => {
-    e.preventDefault();
     setTopic(e.target.innerText);
   };
 
+  console.log(topic);
   const addTopic = (e) => {
     e.preventDefault();
   };
@@ -43,7 +43,8 @@ const RoutineForm = ({db, routines, TOPICS }) => {
       <ul className={classes.topic}>
         {TOPICS.map((topic) => (
           <li key={topic.tab} onClick={onClick}>
-            <button>{topic.tab}</button>
+            <input type="radio" id={`${topic.tab}topic`} name="topic" />
+            <label htmlFor={`${topic.tab}topic`}>{topic.tab}</label>
           </li>
         ))}
         <li>

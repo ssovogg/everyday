@@ -11,9 +11,8 @@ const RoutineList = ({ routines }) => {
             <button>X</button>
             <button>edit</button>
             <button>
-              add <i class="fa-solid fa-arrow-right"></i>
+              add <i className="fa-solid fa-arrow-right"></i>
             </button>
-
           </li>
         ))}
       </ul>

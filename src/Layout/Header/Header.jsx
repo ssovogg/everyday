@@ -30,7 +30,7 @@ const Header = ({ auth }) => {
                 <i className="fa-solid fa-right-from-bracket"></i>
               </div>
             ) : (
-              <sapn>Logout</sapn>
+              <span>Logout</span>
             )}
           </button>
         </li>

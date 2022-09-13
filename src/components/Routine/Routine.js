@@ -8,17 +8,9 @@ import classes from "./Routine.module.css";
 const TOPICS = [{ tab: "여가" }, { tab: "공부" }, { tab: "운동" }];
 
 const Routine = ({ db, routines, selectTopic }) => {
-  const [selectedTab, setSelectedTab] = useState("공부");
-  const [tabActive, setTabActive] = useState(false);
-
   const onSelectTab = (topic) => {
     selectTopic(topic);
-    setSelectedTab(topic);
-    if (selectedTab === topic){
-      setTabActive(true);
-    } else {
-      setTabActive(false);
-    }
+    console.log(topic);
   };
 
   return (
@@ -29,10 +21,10 @@ const Routine = ({ db, routines, selectTopic }) => {
         <ul className={classes.tabs}>
           {TOPICS.map((tab) => (
             <RoutineTab
+              key={tab.tab}
               routine={tab.tab}
               topic={tab.tab}
               onSelectTab={onSelectTab}
-              onActive={tabActive}
             />
           ))}
         </ul>
