@@ -2,17 +2,15 @@ import React, { useRef, useState } from "react";
 import classes from "./RoutineForm.module.css";
 import { addDoc, collection } from "firebase/firestore";
 
-const RoutineForm = ({db, routines, TOPICS }) => {
-  const formRef = useRef();
+const RoutineForm = ({ db, routines, TOPICS }) => {
   const [todo, setTodo] = useState("");
   const [hour, setHour] = useState("");
   const [minutes, setMinutes] = useState("");
   const [topic, setTopic] = useState("공부");
-  const onClick = (e) => {
+  const onClickTopic = (e) => {
     setTopic(e.target.innerText);
   };
 
-  console.log(topic);
   const addTopic = (e) => {
     e.preventDefault();
   };
@@ -30,21 +28,26 @@ const RoutineForm = ({db, routines, TOPICS }) => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    console.log(topic);
     await addDoc(collection(db, topic), {
       topic: topic,
       todo: todo,
       time: Number(hour) * 60 + Number(minutes),
     });
-    formRef.current.reset();
+    setTodo("");
+    setHour("");
+    setMinutes("");
   };
 
   return (
-    <form ref={formRef} onSubmit={onSubmit} className={classes.routine_form}>
+    <form onSubmit={onSubmit} className={classes.routine_form}>
       <ul className={classes.topic}>
         {TOPICS.map((topic) => (
-          <li key={topic.tab} onClick={onClick}>
+          <li key={topic.tab}>
             <input type="radio" id={`${topic.tab}topic`} name="topic" />
-            <label htmlFor={`${topic.tab}topic`}>{topic.tab}</label>
+            <label htmlFor={`${topic.tab}topic`} onClick={onClickTopic}>
+              {topic.tab}
+            </label>
           </li>
         ))}
         <li>

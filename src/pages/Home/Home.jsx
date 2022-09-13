@@ -12,13 +12,13 @@ const Home = ({ auth, db }) => {
   const [topic, setTopic] = useState('여가');
   const [routines, setRoutines] = useState([]);
   const selectTopic = (topic) => setTopic(topic);
+
   useEffect(()=>{
     onSnapshot(collection(db, topic), (snapshot) => {
       const realTimeRoutines = snapshot.docs.map((doc) => ({
         id:doc.id, ...doc.data()
       }))
       setRoutines(realTimeRoutines);
-      console.log(realTimeRoutines);
     })
   },[topic])
 

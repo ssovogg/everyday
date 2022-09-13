@@ -10,9 +10,7 @@ const TOPICS = [{ tab: "여가" }, { tab: "공부" }, { tab: "운동" }];
 const Routine = ({ db, routines, selectTopic }) => {
   const onSelectTab = (topic) => {
     selectTopic(topic);
-    console.log(topic);
   };
-
   return (
     <section className={classes.wrap}>
       <div className={classes.routine}>
