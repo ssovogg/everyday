@@ -17,7 +17,7 @@ const Header = ({ auth }) => {
         <li onMouseEnter={toggleProfileBtn} onMouseLeave={toggleProfileBtn}>
           {!toggleProfle ? (
             <div>
-              <i class="fa-solid fa-user"></i>
+              <i className="fa-solid fa-user"></i>
             </div>
           ) : (
             <span>profile</span>
@@ -27,7 +27,7 @@ const Header = ({ auth }) => {
           <button onClick={onLogout}>
             {!toggleLogout ? (
               <div>
-                <i class="fa-solid fa-right-from-bracket"></i>
+                <i className="fa-solid fa-right-from-bracket"></i>
               </div>
             ) : (
               <sapn>Logout</sapn>

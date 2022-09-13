@@ -1,9 +1,10 @@
 @value cTitle, cBody from '../../common/font.css';
-@value cBlack, clGrey, cRed, clRed,cYellow from '../../common/color.css';
+@value cBlack, clGrey, cGrey, cRed, clRed, cYellow from '../../common/color.css';
+@value cMiddle from '../../common/size.css';
 
 .wrap {
   width: 60%;
-  padding: 1em 2em 0;
+  padding: 1em 2em 3em;
   border-right: 2px solid cBlack;
 }
 
@@ -23,19 +24,29 @@
 
 .topic {
   margin-bottom: 1em;
+  display: flex;
 }
+
+.topic li {
+  margin-right: 0.5em;
+}
+
+.topic li:last-child {
+  margin-right: 0;
+}
+
 .topic button {
   width: 2.8em;
   height: 2.8em;
   border: 1px solid cBlack;
-  margin-right: 0.5em;
   font-family: cBody;
   font-weight: bold;
   font-size: 0.8em;
   transition: all 150ms ease-in;
+  background: cYellow;
 }
-.topic button:last-child {
-  margin-right: 0;
+.topic button:hover {
+  background: cRed;
 }
 
 .topic_active {
@@ -43,16 +54,16 @@
   color: clGrey;
 }
 
-
 .input {
   display: flex;
   width: 100%;
 }
-.todo, .time {
+.todo,
+.time {
   font-family: cBody;
   font-size: 1em;
   padding: 0.5em;
-  background: transparent;
+  background: cWhite;
   border: none;
   border-bottom: 2px solid cBlack;
   border-top: 2px solid cBlack;
@@ -78,4 +89,47 @@
   background: cBlack;
   color: clGrey;
   border: 2px solid cBlack;
+}
+
+.tabs {
+  display: flex;
+}
+.tabs li {
+  padding: 0.3em 0.8em;
+  /* border: 1px solid cBlack; */
+  border-radius: 0.8em 0.8em 0 0;
+  background: cGrey;
+  margin-right: 0.3em;
+  border: 1.5px solid cBlack;
+  border-bottom: none;
+}
+.tabs li:hover {
+  background: cYellow;
+
+}
+
+.tabs .topic_active {
+  position: relative;
+  background: cYellow;
+  border: 1.5px solid cBlack;
+  border-bottom: none;
+}
+
+.tabs .topic_active::after {
+  content: '';
+  width: 100%;
+  height: 4px;
+  background: cYellow;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+}
+
+@media screen and (max-width: cMiddle) {
+  .wrap {
+    width: 100%;
+    border-right: 0;
+    border-bottom: 2px solid cBlack;
+    padding-bottom: 3.5em;
+  }
 }

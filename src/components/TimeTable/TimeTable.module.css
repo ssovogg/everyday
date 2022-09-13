@@ -1,5 +1,6 @@
 @value cTitle, cBody from '../../common/font.css';
 @value cBlack, clGrey, cRed, clRed, cWhite from '../../common/color.css';
+@value cMiddle from '../../common/size.css';
 
 .wrap {
   width: 40%;
@@ -67,4 +68,11 @@
 }
 .theme button:last-child {
   margin-right: 0;
+}
+
+@media screen and (max-width: cMiddle) {
+.wrap {
+width: 100%;
+padding-bottom: 3.5em;
+}
 }
