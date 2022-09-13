@@ -7,6 +7,8 @@ const TOPICS = ["여가", "공부", "운동"];
 
 const Routine = ({ routineObj }) => {
   const [topicSelect, setTopicSelect] = useState(false);
+  const [selectedTab, setSelectedTab] = useState("공부");
+  const [tabActive, setTabActive] = useState(false);
   const onClickTopic = (e) => {
     e.preventDefault();
   };
@@ -15,6 +17,10 @@ const Routine = ({ routineObj }) => {
     e.preventDefault();
   };
 
+  const onSelectTab = (topic) => {
+    setSelectedTab(topic);
+    setTabActive(true);
+  };
   const topicClasses = topicSelect ? `${classes.topic_active}` : null;
   return (
     <section className={classes.wrap}>
@@ -41,19 +47,23 @@ const Routine = ({ routineObj }) => {
           </div>
         </form>
       </div>
-      {Object.keys(routineObj).map((key) => (
-        <div>
-          <ul className={classes.tabs}>
-            <RoutineTab
-              key={key}
-              topic={routineObj[key].topic}
-            />
-          </ul>
+      <ul className={classes.tabs}>
+        {Object.keys(routineObj).map((key) => (
+          <RoutineTab
+            key={key}
+            topic={routineObj[key].topic}
+            onSelectTab={onSelectTab}
+            onActive={tabActive}
+          />
+        ))}
+      </ul>
+      {Object.keys(routineObj)
+        .filter((key) => routineObj[key].topic === selectedTab)
+        .map((key) => (
           <ul>
-            <RoutineList routines={routineObj[key].routines}/>
+            <RoutineList key={key} routines={routineObj[key].routines} />
           </ul>
-        </div>
-      ))}
+        ))}
     </section>
   );
 };
