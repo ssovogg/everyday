@@ -1,15 +1,7 @@
 @value cTitle, cBody from '../../common/font.css';
 @value cBlack, cWhite, clGrey, cGrey, cRed, clRed, cYellow from '../../common/color.css';
 
-
-
 .list {
-  background: cYellow;
-  padding: 1em;
-  border: 1.5px solid cBlack;
-}
-
-.list li {
   font-family: cBody;
   letter-spacing: 1px;
   border: 1.5px solid cBlack;

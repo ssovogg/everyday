@@ -20,14 +20,15 @@ const Routine = ({ db, routines, selectTopic }) => {
           {TOPICS.map((tab) => (
             <RoutineTab
               key={tab.tab}
-              routine={tab.tab}
               topic={tab.tab}
               onSelectTab={onSelectTab}
             />
           ))}
         </ul>
-        <ul>
-          <RoutineList key={routines.id} routines={routines} />
+        <ul className={classes.list}>
+          {routines.map((routine) => (
+            <RoutineList key={routines.id} db={db} routine={routine} topic={routine.topic}/>
+          ))}
         </ul>
       </div>
     </section>

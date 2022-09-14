@@ -17,6 +17,12 @@
   display: flex;
 }
 
+.list {
+  background: cYellow;
+  padding: 1em;
+  border: 1.5px solid cBlack;
+}
+
 @media screen and (max-width: cMiddle) {
   .wrap {
     width: 100%;
