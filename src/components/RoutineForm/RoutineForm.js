@@ -71,8 +71,12 @@ const RoutineForm = ({ db, routines, TOPICS }) => {
           name="hour"
           value={hour}
           onChange={onChange}
-        />
+          min="0"
+          />
         <input
+          min="0"
+          max="60"
+          step="5"
           type="number"
           placeholder="분"
           className={classes.time}

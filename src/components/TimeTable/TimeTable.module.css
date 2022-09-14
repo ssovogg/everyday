@@ -1,10 +1,20 @@
 @value cTitle, cBody from '../../common/font.css';
-@value cBlack, clGrey, cRed, clRed, cWhite from '../../common/color.css';
+@value cBlack, clGrey, cRed, clRed, cWhite, cYellow from '../../common/color.css';
 @value cMiddle from '../../common/size.css';
 
 .wrap {
   width: 40%;
   padding: 1em 2em 0;
+}
+
+.wrap .lignt {
+  background: cWhite;
+}
+.wrap .dark {
+  background: cBlack;
+}
+.wrap .yellow {
+  background: cYellow;
 }
 
 .title {
@@ -32,12 +42,18 @@
   align-items: center;
   font-size: 1em;
   font-family: cBody;
+  padding: 0.7em 0;
+  border-bottom: 1px solid cBlack;
+}
+
+.list li:last-child {
+  border-bottom: 0;
 }
 
 .list input {
   margin-right: 0.5em;
 }
-.list p {
+.list label {
   flex: 1;
   text-align: start;
   font-weight: bold;
@@ -61,13 +77,38 @@
   font-size: 0.8em;
 }
 
-.theme {}
-.theme button {
-  width: 3.5em;
-  margin-right: 0.5em;
+.theme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1em;
 }
-.theme button:last-child {
+.theme span {
+  margin-right: 1em;
+  font-size: 1.1em;
+  margin-bottom: 0.3em;
+}
+.theme input {
+  display: none;
+}
+.theme input[type=radio]+label {
+  border: 1px solid cBlack;
+  padding: 0.5em 0.7em;
+  margin-right: 0.5em;
+  border-radius: 0.2em;
+  font-family: cBody;
+  font-size: 0.8em;
+}
+.theme input[type=radio]+label:hover {
+  background: cYellow;
+}
+.theme input[type=radio]+label:last-child {
   margin-right: 0;
+}
+
+.theme input[type=radio]:checked+label{
+  background: cYellow;
+  font-weight: bold;
 }
 
 @media screen and (max-width: cMiddle) {

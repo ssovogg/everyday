@@ -12,6 +12,39 @@
   margin: 0.5em 0;
 }
 
+.edit_form {
+  display: flex;
+  width: 100%;
+}
+
+.edit_form select {
+  border: none;
+  border-right: 1px solid cBlack;
+  font-family: cBody;
+}
+
+.edit_form input[type="text"] {
+  border: none;
+  flex: 1;
+}
+.edit_form input[type="number"] {
+  border: none;
+  width: 3.5em;
+}
+
+.edit_form input,
+.edit_form button {
+  font-family: cBody;
+  font-size: 1em;
+  padding: 0.5em;
+}
+
+.edit_form select:focus,
+.edit_form input:focus {
+  outline: none;
+  font-weight: bold;
+}
+
 .list p {
   flex: 1;
   font-weight: bold;
@@ -20,6 +53,10 @@
 .list span {
   padding: 0 0.5em;
   padding: 0.5em 0;
+}
+
+.hour {
+  margin-right: 0.3em;
 }
 .list button {
   all: unset;
